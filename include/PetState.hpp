@@ -8,6 +8,8 @@
 class Pet;
 
 class PetState{
+    protected:
+    Pet * _pet;
     public:
     virtual void onEnter(Pet * pet);
     virtual void onEvent(const PetEvent  &event);

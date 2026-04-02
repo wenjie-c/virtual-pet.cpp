@@ -27,18 +27,18 @@ namespace Utils {
     };
 }
 
-static char hungryDecrement = 33;
-static char sleepDecrement = 33;
-static char smellDecrement = 60;
-static char boredomDecrement = 60;
+static ushort hungryDecrement = 33;
+static ushort sleepDecrement = 33;
+static ushort smellDecrement = 60;
+static ushort boredomDecrement = 60;
 
-static char hungryIncrement = 3;
-static char sleepIncrement = 1;
-static char smellIncrement = 3;
-static char boredomIncrement = 3;
+static ushort hungryIncrement = 3;
+static ushort sleepIncrement = 1;
+static ushort smellIncrement = 3;
+static ushort boredomIncrement = 3;
 
-static char threshold = 200;
-static char ticksPerHour = 12; // one ticks is 5 minutes
+static ushort threshold = 200;
+static ushort ticksPerHour = 12; // one ticks is 5 minutes
 
 
 #endif // UTILS_HPP

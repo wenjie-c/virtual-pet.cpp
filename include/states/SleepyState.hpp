@@ -4,9 +4,8 @@
 #ifndef SLEEPY_STATE_HPP
 #define SLEEPY_STATE_HPP
 
-class SleepyState : public HungryState
+class SleepyState : public PetState
 {
-    Pet * _pet;
     public:
     virtual void onEnter(Pet * pet)  override {_pet = pet; cout << "Entering to SleepyState." << endl;}
     virtual void onEvent(const PetEvent  &event) override ;

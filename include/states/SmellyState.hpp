@@ -4,9 +4,8 @@
 #ifndef SMELLY_STATE_HPP
 #define SMELLY_STATE_HPP
 
-class SmellyState : public SleepyState 
+class SmellyState : public PetState 
 {
-    Pet * _pet;
     public:
     virtual void onEnter(Pet * pet)  override {_pet = pet; cout << "Entering to SmellyState." << endl;}
     virtual void onEvent(const PetEvent  &event) override ;

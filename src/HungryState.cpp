@@ -3,7 +3,7 @@
 #include <Pet.hpp>
 #include <sys/types.h>
 
-void HungryState::onEvent(const PetEvent &event) {}
+void HungryState::onEvent(const PetEvent &event) {PetState::onEvent(event);}
 PetState *HungryState::onUpdate(ushort ticks) {
     if(_pet->getHungry() < threshold)
         return new SleepyState();

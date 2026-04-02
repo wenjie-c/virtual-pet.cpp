@@ -6,7 +6,7 @@
 #include <states/SmellyState.hpp>
 #include <sys/types.h>
 
-void HappyState::onEvent(const PetEvent &event) {}
+void HappyState::onEvent(const PetEvent &event) {PetState::onEvent(event);}
 PetState *HappyState::onUpdate(ushort ticks) {
   if (_pet->getHungry() > threshold)
     return new HungryState();

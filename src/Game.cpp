@@ -49,16 +49,15 @@ void Game::handleEvents() {
 
   pet.onEvent(event);
 }
-void Game::onExit() {pet.release();}
+void Game::onExit() { pet.release(); }
 
 void Game::run() {
 
-    while(!_exitFlag)
-    {
-        draw();
-        handleEvents();
-        pet.onUpdate(clock.deltaTicks);
-        clock.onUpdate();
-    }
-    onExit();
+  while (!_exitFlag) {
+    draw();
+    handleEvents();
+    clock.onUpdate(); // It updates here to catch skip hour correctly
+    pet.onUpdate(clock.deltaTicks);
+  }
+  onExit();
 }

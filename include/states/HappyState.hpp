@@ -4,7 +4,6 @@
 #define HAPPY_STATE_HPP
 
 class HappyState : public PetState {
-  Pet *_pet;
 
 public:
   virtual void onEnter(Pet *pet) override { _pet = pet; cout << "Entering to HappyState." << endl;}

@@ -4,10 +4,10 @@
 #include <Pet.hpp>
 #include <sys/types.h>
 
-void SleepyState::onEvent(const PetEvent &event) {}
+void SleepyState::onEvent(const PetEvent &event) {PetState::onEvent(event);}
 PetState *SleepyState::onUpdate(ushort ticks) {
     if(_pet->getHungry() > threshold)
-        return HungryState::onUpdate(ticks);
+        return new HungryState();
     if(_pet->getSleep() < threshold)
         return new SmellyState();
     return NULL;

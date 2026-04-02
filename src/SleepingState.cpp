@@ -4,8 +4,8 @@
 
 void SleepingState::onEvent(const PetEvent &event)  {}
 PetState *SleepingState::onUpdate(ushort ticks) {
-  if (_pet->getSleep() != 1) {
-    _pet->sleep();
+  if (_pet->getSleep() > sleepDecrement) {
+    _pet->sleep(ticks);
     return NULL;
   } else {
     return new HappyState();

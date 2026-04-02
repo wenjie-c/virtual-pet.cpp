@@ -1,6 +1,7 @@
 #include <PetState.hpp>
 #include <cstdint>
 #include <states/HappyState.hpp>
+#include <sys/types.h>
 #ifndef PET_HPP
 #define PET_HPP
 
@@ -17,7 +18,7 @@ public:
       {_state->onEnter(this);}
 
   void onEvent(const PetEvent &event);
-  void onUpdate(char ticks);
+  void onUpdate(ushort ticks);
   void draw();
   void release() {
     _state->onExit();
@@ -37,7 +38,7 @@ public:
 
 #pragma region eventHandler
   void feed();
-  void sleep();
+  void sleep(ushort ticks);
   void clean();
   void play();
 #pragma endregion

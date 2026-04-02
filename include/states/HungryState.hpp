@@ -5,7 +5,6 @@
 
 class HungryState : public PetState 
 {
-    Pet * _pet;
     public:
     virtual void onEnter(Pet * pet)  override {_pet = pet; cout << "Entering to HungryState." << endl;}
     virtual void onEvent(const PetEvent  &event) override ;

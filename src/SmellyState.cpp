@@ -2,10 +2,10 @@
 #include <states/BoredState.hpp>
 #include <Pet.hpp>
 #include <sys/types.h>
-void SmellyState::onEvent(const PetEvent &event) {}
+void SmellyState::onEvent(const PetEvent &event) {PetState::onEvent(event);}
 PetState *SmellyState::onUpdate(ushort ticks) {
     if(_pet->getSleep() > threshold)
-        return SleepyState::onUpdate(ticks);
+        return new SleepyState();
     if(_pet->getSmell() < threshold)
         return new BoredState();
     return NULL;

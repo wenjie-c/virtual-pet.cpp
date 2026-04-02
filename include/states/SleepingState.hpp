@@ -4,7 +4,6 @@
 #define SLEEPING_STATE_HPP
 
 class SleepingState : public PetState {
-  Pet *_pet;
 
 public:
   virtual void onEnter(Pet *pet) override { _pet = pet; cout << "Entering to SleepingState." << endl;}
